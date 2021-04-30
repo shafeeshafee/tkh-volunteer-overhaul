@@ -15,9 +15,7 @@ const Volunteers = () => {
 		let volunteersList = volunteersListElement.childNodes;
 
 		for(let volunteerInfo of volunteersList) {
-			console.log(volunteerInfo.innerText);
 			const volunteerInfoBank = volunteerInfo.innerText.toLowerCase();
-			console.log(volunteerInfoBank);
 
 			let currentVolunteerIsRelevant = false;
 			for(const searchTerm of searchTerms) {
@@ -27,12 +25,14 @@ const Volunteers = () => {
 			}
 
 			if(currentVolunteerIsRelevant) {
-				alert("Making this volunteer visible as they are relevant");
-				volunteerInfo.classList.remove("hide");
+				//alert("Making this volunteer visible as they are relevant");
+				volunteerInfo.classList.remove("invisible");
+				volunteerInfo.classList.add("visible");
 			}
 			else {
-				alert("Hiding this volunteer as they are not relevant");
-                                volunteerInfo.classList.add("hide");
+				//alert("Hiding this volunteer as they are not relevant");
+				volunteerInfo.classList.remove("visible");
+                                volunteerInfo.classList.add("invisible");
 			}
 		}
 	}
