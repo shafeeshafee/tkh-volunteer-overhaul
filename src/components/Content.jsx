@@ -3,7 +3,7 @@ import React from "react";
 const Content = () => {
 	return (
 		<div>
-			<div className="heading_section italic bg-gray-200 font-semibold text-3xl text-center p-5 pt-24 text-gray-800">
+			<div className="heading_section bg-gray-200 font-semibold text-3xl text-center p-5 pt-24 text-gray-800">
 				Join a High Caliber Mentoring Network
 			</div>
 
@@ -17,7 +17,7 @@ const Content = () => {
 						/>
 					</div>
 					<div className="text p-5 pt-2 text-center">
-						<div className="title font-semibold my-2 text-xl text-red-700">Networking made easy</div>
+						<div className="title font-semibold my-2 text-xl text-tkhpurple">Networking made easy</div>
 						<div className="desc">
 							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit modi quo non cumque! Maiores, ipsam blanditiis quod eaque
 							necessitatibus corrupti, minima quaerat, possimus sunt distinctio laboriosam a nemo dolore fugiat.
@@ -34,7 +34,7 @@ const Content = () => {
 						/>
 					</div>
 					<div className="text p-5 pt-2 text-center">
-						<div className="title font-semibold my-2 text-xl text-red-700">Learn anything</div>
+						<div className="title font-semibold my-2 text-xl text-tkhpurple">Learn anything</div>
 						<div className="desc">
 							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit modi quo non cumque! Maiores, ipsam blanditiis quod eaque
 							necessitatibus corrupti, minima quaerat, possimus sunt distinctio laboriosam a nemo dolore fugiat.
@@ -51,7 +51,7 @@ const Content = () => {
 						/>
 					</div>
 					<div className="text p-5 pt-2 text-center">
-						<div className="title font-semibold my-2 text-xl text-red-700">Build a community</div>
+						<div className="title font-semibold my-2 text-xl text-tkhpurple">Build a community</div>
 						<div className="desc">
 							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit modi quo non cumque! Maiores, ipsam blanditiis quod eaque
 							necessitatibus corrupti, minima quaerat, possimus sunt distinctio laboriosam a nemo dolore fugiat.

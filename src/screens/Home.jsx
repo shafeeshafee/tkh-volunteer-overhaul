@@ -1,5 +1,4 @@
 import Content from "../components/Content";
-import Footer from "../components/Footer";
 import Heading from "../components/Heading";
 
 export default function Example() {
@@ -7,7 +6,6 @@ export default function Example() {
 		<>
 			<Heading />
 			<Content />
-			<Footer />
 		</>
 	);
 }

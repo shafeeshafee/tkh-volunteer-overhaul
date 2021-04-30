@@ -1,11 +1,32 @@
 import "./App.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 import Faq from "./screens/Faq";
 import Home from "./screens/Home";
+import Volunteers from "./screens/Volunteers";
+import Footer from "./components/Footer";
+import Testimonials from "./screens/Testimonials";
 
 function App() {
 	return (
 		<div className="App">
-			<Home />
+			<Router>
+				<Switch>
+					<Route exact path="/">
+						<Home />
+					</Route>
+					<Route exact path="/faq">
+						<Faq />
+					</Route>
+					<Route exact path="/volunteers">
+						<Volunteers />
+					</Route>
+					<Route exact path="/testimonials">
+						<Testimonials />
+					</Route>
+				</Switch>
+			</Router>
+			<Footer />
 		</div>
 	);
 }

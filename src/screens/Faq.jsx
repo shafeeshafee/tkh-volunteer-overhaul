@@ -1,8 +1,10 @@
 import React from "react";
+import Navbar from "../components/Navbar";
 
 const Faq = () => {
 	return (
 		<div>
+			<Navbar />
 			<div className="max-w-screen-xl mx-auto p-8">
 				<h2 className="text-3xl font-extrabold leading-9 border-b-2 border-gray-100 text-gray-900 mb-12">FAQs</h2>
 				<ul className="flex items-start gap-8 flex-wrap">
