@@ -56,7 +56,7 @@ const Navbar = () => {
 											);
 										}
 									})}
-									<Link to="/testimonials" className="font-medium text-tkhpurple hover:text-indigo-500">
+									<Link to="/testimonials" className="font-medium text-tkhpurple hover:text-tkhyellow">
 										Testimonials
 									</Link>
 								</div>
