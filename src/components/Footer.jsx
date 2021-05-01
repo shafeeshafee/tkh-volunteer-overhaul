@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
 	return (
-		<div>
+		<div className="font-headings">
 			<div className="w-full min-h-1/2 flex items-center justify-center bg-tkhpurple">
 				<div className="md:w-2/3 w-full px-4 text-white flex flex-col">
 					<div className="w-full text-7xl font-bold">

@@ -4,6 +4,9 @@ import Navbar from "../components/Navbar";
 import VolunteerCard from "../components/utilities/VolunteerCard";
 import volunteersData from "../volunteers.js";
 
+import Flip from "react-reveal/Flip";
+import Fade from "react-reveal/Fade";
+
 const Volunteers = () => {
 	const [volunteers, setVolunteers] = useState(volunteersData);
 
@@ -44,46 +47,52 @@ const Volunteers = () => {
 
 			<h1 className="text-5xl font-headings pt-24 font-bold text-tkhpurple">Our Volunteers</h1>
 			{/* dropdown */}
-			<div className="relative inline-flex pt-10">
-				<div className="flex justify-center items-center flex-wrap">
-					<select
-						id="skillSelect"
-						defaultValue=""
-						onChange={updateAvailableVolunteers}
-						className="border font-headings text-lg border-gray-300 rounded-full text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none"
-					>
-						<option value="" selected="selected" disabled hidden>
-							Select skills of interest
-						</option>
-						<option value="JavaScript">JavaScript</option>
-						<option value="c++">C++</option>
-						<option value="python">Python</option>
-						<option value="sql">SQL</option>
-						<option value="lua">Lua</option>
-						<option value="technical interviews">Technical Interview Prep</option>
-						<option value="behaviorial interviews">Behavioral Interview Prep</option>
-					</select>
-
-					<br />
-					{/* Search component goes below */}
-					<div className="flex justify-center items-center font-headings">
-						<p className="mx-0 lg:ml-12 lg:mr-2">Search:</p>
-						<input
-							className="border shadow-lg h-10 w-56 text-center my-10"
-							id="volunterSearchCriteria"
+			<Fade>
+				<div className="relative inline-flex pt-10">
+					<div className="flex justify-center items-center flex-wrap">
+						<select
+							id="skillSelect"
+							defaultValue=""
 							onChange={updateAvailableVolunteers}
-							type="search"
-							placeholder="Search e.g., JavaScript"
-						/>
+							className="border font-headings text-lg border-gray-300 rounded-full text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none"
+						>
+							<option value="" selected="selected" disabled hidden>
+								Select skills of interest
+							</option>
+							<option value="JavaScript">JavaScript</option>
+							<option value="c++">C++</option>
+							<option value="python">Python</option>
+							<option value="sql">SQL</option>
+							<option value="lua">Lua</option>
+							<option value="technical interviews">Technical Interview Prep</option>
+							<option value="behaviorial interviews">Behavioral Interview Prep</option>
+						</select>
+
+						<br />
+						{/* Search component goes below */}
+						<div className="flex justify-center items-center font-headings">
+							<p className="mx-0 lg:ml-12 lg:mr-2">Search:</p>
+							<input
+								className="border shadow-lg h-10 w-56 text-center my-10"
+								id="volunterSearchCriteria"
+								onChange={updateAvailableVolunteers}
+								type="search"
+								placeholder="Search e.g., JavaScript"
+							/>
+						</div>
 					</div>
 				</div>
-			</div>
-			{/* List of volunteers below */}
-			<ul className="flex justify-center flex-wrap" id="relevantVoluteersLst">
-				{volunteers.technical.map((vol) => {
-					return <VolunteerCard volunteer={vol} />;
-				})}
-			</ul>
+				{/* List of volunteers below */}
+				<ul className="flex justify-center flex-wrap" id="relevantVoluteersLst">
+					{volunteers.technical.map((vol) => {
+						return (
+							<Fade bottom>
+								<VolunteerCard volunteer={vol} />
+							</Fade>
+						);
+					})}
+				</ul>
+			</Fade>
 		</div>
 	);
 };
