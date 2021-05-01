@@ -7,7 +7,7 @@ import volunteersData from "../volunteers.js";
 const Volunteers = () => {
 	const [volunteers, setVolunteers] = useState([]);
 
-	function updateAvailableVolunteers() {
+	function updateAvailableVolunteers(isSkillProvided) {
 		const volunteerSearchCriteria = document.getElementById("volunterSearchCriteria");
 		const searchTerms = volunteerSearchCriteria.value.split();
 		console.log("Current search criteria: " + searchTerms);
@@ -26,7 +26,9 @@ const Volunteers = () => {
 				}
 			}
 
-			if(currentVolunteerIsRelevant) {
+			const selectedSkill = document.getElementById("skillSelect").value;
+			console.log("Selected Skill: " + selectedSkill);
+			if(currentVolunteerIsRelevant && volunteerInfoBank.includes(selectedSkill)) {
 				console.log("Making this volunteer visible as they are relevant");
 				volunteerInfo.style.display = "block";
 			}
@@ -51,19 +53,18 @@ const Volunteers = () => {
 						fill-rule="nonzero"
 					/>
 				</svg>
-				<select className="border border-gray-300 rounded-full text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none">
-					<option>Choose a color</option>
-					<option>Red</option>
-					<option>Blue</option>
-					<option>Yellow</option>
-					<option>Black</option>
-					<option>Orange</option>
-					<option>Purple</option>
-					<option>Gray</option>
-					<option>White</option>
+				<select id="skillSelect" defaultValue="" onChange={updateAvailableVolunteers} className="border border-gray-300 rounded-full text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none">
+					<option value="">Select skills of interest</option>
+					<option value="javascript">Javascript</option>
+					<option value="c++">C++</option>
+					<option value="python">Python</option>
+					<option value="sql">SQL</option>
+					<option value="lua">Lua</option>
+					<option value="technical interviews">Technical Interview Prep</option>
+					<option value="behaviorial interviews">Behavioral Interview Prep</option>
 				</select>
 			</div>
-			<br />
+			<br/>
 			{/* Search component goes below */}
 			<input id="volunterSearchCriteria" onChange={updateAvailableVolunteers} type="search" placeholder="Search e.g., JavaScript" />
 
