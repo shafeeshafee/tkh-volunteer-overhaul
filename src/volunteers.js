@@ -17,10 +17,10 @@ const volunteersData = {
             "websites": {
                 "linkedin": "https://www.linkedin.com/in/sarah-heacock",
                 "github": "https://github.com/sarahheacock",
-                "personal_website": "link",
-                "company_website": "link"
+                "personal_website": "",
+                "company_website": ""
             },
-            "calendly": "link"
+            "calendly": "https://calendly.com/sarahheacock"
         },
         {
             "id": "2",
@@ -143,10 +143,11 @@ const volunteersData = {
             "location": "New York, NY",
             "proficiencies": [
                 "Javascript",
-                "Node JS",
+                "NodeJS",
                 "Angular",
                 "Vue",
-                "Ruby on Rails",
+                "Ruby",
+                "Rails",
                 "jQuery",
                 "HTML5",
                 "CSS",
@@ -194,7 +195,7 @@ const volunteersData = {
             "proficiencies": [
                 "Javascript",
                 "Typescript",
-                "Node JS",
+                "NodeJS",
                 "Express",
                 "PostgreSQL",
                 "React",
@@ -268,7 +269,7 @@ const volunteersData = {
                 "Javascript",
                 "Java",
                 "React",
-                "Node JS"
+                "NodeJS"
             ],
             "websites": {
                 "linkedin": "https://www.linkedin.com/in/charlesnaut/",
@@ -411,7 +412,7 @@ const volunteersData = {
                 "CSS",
                 "Javascript",
                 "React",
-                "Node JS"
+                "NodeJS"
             ],
             "websites": {
                 "linkedin": "https://www.linkedin.com/in/chris-lee1998/",
@@ -496,7 +497,7 @@ const volunteersData = {
             "proficiencies": [
                 "Go",
                 "Javascript",
-                "Node JS",
+                "NodeJS",
                 "SQL"
             ],
             "websites": {
@@ -521,7 +522,7 @@ const volunteersData = {
                 "Ruby",
                 "Rails",
                 "Angular",
-                "Node JS",
+                "NodeJS",
                 "MySQL"
             ],
             "websites": {
@@ -716,7 +717,7 @@ const volunteersData = {
             "location": "New York, NY",
             "proficiencies": [
                 "React",
-                "Node JS",
+                "NodeJS",
                 "Javascript",
                 "Project Management",
                 "Innovation"
@@ -740,7 +741,7 @@ const volunteersData = {
             "proficiencies": [
                 "Javascript",
                 "React",
-                "Node JS",
+                "NodeJS",
                 "Java",
                 "Ruby",
                 "Python"

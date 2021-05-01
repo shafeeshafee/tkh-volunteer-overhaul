@@ -5,7 +5,7 @@ import VolunteerCard from "../components/utilities/VolunteerCard";
 import volunteersData from "../volunteers.js";
 
 const Volunteers = () => {
-	const [volunteers, setVolunteers] = useState([]);
+	const [volunteers, setVolunteers] = useState(volunteersData);
 
 	function updateAvailableVolunteers(isSkillProvided) {
 		const volunteerSearchCriteria = document.getElementById("volunterSearchCriteria");
@@ -40,7 +40,7 @@ const Volunteers = () => {
 	}
 
 	return (
-		<div className="h-screen">
+		<div>
 			<Navbar />
 			<h1 className="text-5xl">Volunteers Page</h1>
 			<hr />
@@ -69,11 +69,12 @@ const Volunteers = () => {
 			<input id="volunterSearchCriteria" onChange={updateAvailableVolunteers} type="search" placeholder="Search e.g., JavaScript" />
 
 			{/* List of volunteers below */}
-			<ul id="relevantVoluteersLst">
-                <VolunteerCard volunteer={volunteersData.technical[0]}/>
-				<VolunteerCard role="Data Scientist" name="Jason McData" employer="Abc-Xyz Inc." languages={["Python"]} />
-				<VolunteerCard role="Data Scientist" name="Gregory Wint" employer="Abc-Xyz Inc." languages={["JavaScript"]} />
-				<VolunteerCard role="Data Scientist" name="Stringer Bell" employer="Abc-Xyz Inc." languages={["Lua"]} />
+			<ul className="flex justify-center flex-wrap" id="relevantVoluteersLst">
+				{
+					volunteers.technical.map ( vol => {
+						return <VolunteerCard volunteer={vol} />
+					})
+				}
 			</ul>
 		</div>
 	);
