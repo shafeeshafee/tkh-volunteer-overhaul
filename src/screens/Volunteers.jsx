@@ -9,13 +9,14 @@ const Volunteers = () => {
 	function updateAvailableVolunteers() {
 		const volunteerSearchCriteria = document.getElementById("volunterSearchCriteria");
 		const searchTerms = volunteerSearchCriteria.value.split();
-		alert("Current search criteria: " + searchTerms);
+		console.log("Current search criteria: " + searchTerms);
 
 		let volunteersListElement = document.getElementById("relevantVoluteersLst");
 		let volunteersList = volunteersListElement.childNodes;
 
 		for(let volunteerInfo of volunteersList) {
 			const volunteerInfoBank = volunteerInfo.innerText.toLowerCase();
+			console.log("volunteersInfoBank: " + volunteerInfoBank);
 
 			let currentVolunteerIsRelevant = false;
 			for(const searchTerm of searchTerms) {
@@ -25,14 +26,12 @@ const Volunteers = () => {
 			}
 
 			if(currentVolunteerIsRelevant) {
-				//alert("Making this volunteer visible as they are relevant");
-				volunteerInfo.classList.remove("invisible");
-				volunteerInfo.classList.add("visible");
+				console.log("Making this volunteer visible as they are relevant");
+				volunteerInfo.style.display = "block";
 			}
 			else {
-				//alert("Hiding this volunteer as they are not relevant");
-				volunteerInfo.classList.remove("visible");
-                                volunteerInfo.classList.add("invisible");
+				console.log("Hiding this volunteer as they are not relevant");
+				volunteerInfo.style.display = "none";
 			}
 		}
 	}
