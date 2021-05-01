@@ -6,6 +6,10 @@ module.exports = {
 				tkhpurple: "#372359",
 				tkhyellow: "#FEC308",
 			},
+			fontFamily: {
+				headings: ["Montserrat"],
+				bodyFont: ["Hind"],
+			},
 			animation: {
 				/* If you are using Toast component*/
 				left: "left 0.3s",
