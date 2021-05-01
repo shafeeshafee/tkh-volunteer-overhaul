@@ -2,14 +2,9 @@ import { useState } from "react";
 
 import Navbar from "../components/Navbar";
 import VolunteerCard from "../components/utilities/VolunteerCard";
-import volunteersData from '../volunteers.js'
-import testpic from '../volunteer_images/volunteer_career_Derrick_Stroman.jpeg'
 
 const Volunteers = () => {
 	const [volunteers, setVolunteers] = useState([]);
-	// const [volData, setVolData] = useState(volunteersData)
-
-	console.log("DATA:", volunteersData)
 
 	return (
 		<div className="h-screen">
@@ -43,19 +38,6 @@ const Volunteers = () => {
 
 			{/* List of volunteers below */}
 			<VolunteerCard role="Data Scientist" name="Jason McData" employer="Abc-Xyz Inc." languages={["Python", "JavaScript", "Lua"]} />
-<h1>HI</h1>
-<div>
-	{volunteersData.career.map(el => {
-		console.log(el.name)
-		return (
-			<>
-			<p>{el.name}</p>
-			<img src={el.image_link} alt ="test" />
-			</>
-		)
-	})}
-</div>
-<img src="../volunteer_images/volunteer_career_Derrick_Stroman.jpeg" alt=""/>
 		</div>
 	);
 };
