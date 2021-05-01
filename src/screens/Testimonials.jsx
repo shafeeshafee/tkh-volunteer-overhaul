@@ -4,6 +4,7 @@ import TestimonialCard from "../components/utilities/TestimonialCard";
 
 import Fade from "react-reveal/Fade";
 import Slide from "react-reveal/Slide";
+import VolunteerVid from "../components/utilities/VolunteerVid";
 
 const Testimonials = () => {
 	return (
@@ -29,6 +30,7 @@ const Testimonials = () => {
 									<span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
 								</div>
 							</div>
+							<VolunteerVid />
 							<div className="-mx-3 md:flex items-start">
 								<div className="px-3 md:w-1/2">
 									{/* 3 students */}
