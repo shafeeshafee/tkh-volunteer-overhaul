@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 import { ZoomInIcon } from "@heroicons/react/outline";
 import ProfileModal from "./ProfileModal";
-import volunteersData from "../../volunteers";
 
 const VolunteerCard = ({ role, name, employer, languages, volunteer }) => {
 	const [isOpen, setIsOpen] = useState(false);
