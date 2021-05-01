@@ -1,6 +1,8 @@
 import { useState } from "react";
 
 import Navbar from "../components/Navbar";
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+
 import VolunteerCard from "../components/utilities/VolunteerCard";
 import volunteersData from "../volunteers.js";
 
@@ -8,14 +10,15 @@ import Flip from "react-reveal/Flip";
 import Fade from "react-reveal/Fade";
 
 const Volunteers = () => {
-	const [volunteers, setVolunteers] = useState(volunteersData);
+    const [selectedTabIndex, setSelectedTabIndex] = useState(0);
+    const [volunteers, setVolunteers] = useState(volunteersData.technical);
 
 	function updateAvailableVolunteers(isSkillProvided) {
-		const volunteerSearchCriteria = document.getElementById("volunterSearchCriteria");
+		const volunteerSearchCriteria = document.getElementById("volunteerSearchCriteria");
 		const searchTerms = volunteerSearchCriteria.value.split();
 		console.log("Current search criteria: " + searchTerms);
 
-		let volunteersListElement = document.getElementById("relevantVoluteersLst");
+		let volunteersListElement = document.getElementById("relevantVolunteersList");
 		let volunteersList = volunteersListElement.childNodes;
 
 		for (let volunteerInfo of volunteersList) {
@@ -31,7 +34,7 @@ const Volunteers = () => {
 
 			const selectedSkill = document.getElementById("skillSelect").value;
 			console.log("Selected Skill: " + selectedSkill);
-			if (currentVolunteerIsRelevant && volunteerInfoBank.includes(selectedSkill)) {
+			if (currentVolunteerIsRelevant && volunteerInfoBank.includes(selectedSkill.toLowerCase())) {
 				console.log("Making this volunteer visible as they are relevant");
 				volunteerInfo.style.display = "block";
 			} else {
@@ -40,6 +43,29 @@ const Volunteers = () => {
 			}
 		}
 	}
+
+    function getClassForTab(index) {
+        // This feels kind of hacky, but not sure how else to do it right now
+        const unselectedTabClassName = "py-2 px-6 bg-gray-300 rounded-t-lg";
+        const selectedTabClassName = "py-2 px-6 bg-white rounded-t-lg border-black border-2";
+        return selectedTabIndex === index ? selectedTabClassName : unselectedTabClassName;
+    }
+
+    function resetFilters() {
+        const volunteerSearchCriteria = document.getElementById("volunteerSearchCriteria");
+        const skillSelector = document.getElementById("skillSelect");
+        volunteerSearchCriteria.value = "";
+        skillSelector.value="";
+        // Changing input programmatically doesn't fire change event, so we have to do update again manually
+        updateAvailableVolunteers();
+    }
+
+    function handleSelect(index) {
+        const volunteerCategories = ["technical", "career"];
+        resetFilters();
+        setVolunteers(volunteersData[volunteerCategories[index]]);
+        setSelectedTabIndex(index);
+    }
 
 	return (
 		<div>
@@ -50,6 +76,12 @@ const Volunteers = () => {
 			<Fade>
 				<div className="relative inline-flex pt-10">
 					<div className="flex justify-center items-center flex-wrap">
+                        <Tabs selectedIndex={selectedTabIndex} onSelect={handleSelect}>
+                            <TabList className="flex cursor-pointer">
+                                <Tab className={getClassForTab(0)}>Technical</Tab>
+                                <Tab className={getClassForTab(1)}>Career</Tab>
+                            </TabList>
+                        </Tabs>
 						<select
 							id="skillSelect"
 							defaultValue=""
@@ -74,7 +106,7 @@ const Volunteers = () => {
 							<p className="mx-0 lg:ml-12 lg:mr-2">Search:</p>
 							<input
 								className="border shadow-lg h-10 w-56 text-center my-10"
-								id="volunterSearchCriteria"
+								id="volunteerSearchCriteria"
 								onChange={updateAvailableVolunteers}
 								type="search"
 								placeholder="Search e.g., JavaScript"
@@ -83,8 +115,8 @@ const Volunteers = () => {
 					</div>
 				</div>
 				{/* List of volunteers below */}
-				<ul className="flex justify-center flex-wrap" id="relevantVoluteersLst">
-					{volunteers.technical.map((vol) => {
+				<ul className="flex justify-center flex-wrap" id="relevantVolunteersList">
+					{volunteers.map((vol) => {
 						return (
 							<Fade bottom>
 								<VolunteerCard volunteer={vol} />
