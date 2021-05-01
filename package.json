@@ -45,8 +45,8 @@
   "devDependencies": {
     "@iconify-icons/heroicons-outline": "^1.1.2",
     "@iconify/react": "^1.1.4",
-    "autoprefixer": "^9.8.6",
-    "postcss": "^7.0.35",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.2"
+    "autoprefixer": "9",
+    "postcss": "7",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   }
 }
