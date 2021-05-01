@@ -16,7 +16,7 @@ const Content = () => {
 						<ContentCard
 							image="https://images.unsplash.com/photo-1527689368864-3a821dbccc34?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
 							title="Networking made easy"
-							text="Through our volunteer options, networking was never made easier. With over fifty experts ranging from software engineers, data scientists, and career professionals - we got you covered."
+							text="Whether it's career advice, or building connections, we got you covered. With over fifty experts ranging from software engineers, data scientists, and career professionals, there's always room to grow."
 						/>
 					</Bounce>
 					<Bounce left>
@@ -31,8 +31,7 @@ const Content = () => {
 						<ContentCard
 							image="https://images.unsplash.com/photo-1573164574511-73c773193279?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
 							title="Build a community"
-							text="Through our volunteer options, networking was never made easier. Find someone you want to talk to, set up a schedule, build a
-							relationship, and grow your network."
+							text="There has never been a more important time to build diversity and inclusion in the workforce, that's why volunteers are here to help students like you succeed in the tech industry. "
 						/>
 					</Bounce>
 				</div>

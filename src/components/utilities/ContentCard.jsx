@@ -9,7 +9,7 @@ const ContentCard = ({ image, title, text }) => {
 				</div>
 				<div className="text p-5 pt-2 text-center h-full lg:h-56">
 					<div className="title font-semibold my-2 text-2xl font-headings text-tkhpurple">{title}</div>
-					<div className="desc text-lg">{text}</div>
+					<div className="desc text-lg text-justify">{text}</div>
 				</div>
 			</div>
 		</div>

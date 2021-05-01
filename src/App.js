@@ -10,8 +10,8 @@ import Testimonials from "./screens/Testimonials";
 
 function App() {
 	return (
-		<div className="App">
-			<Router>
+		<Router>
+			<div className="App">
 				<Switch>
 					<Route exact path="/">
 						<Home />
@@ -22,16 +22,16 @@ function App() {
 					<Route exact path="/volunteers">
 						<Volunteers />
 					</Route>
-                    <Route exact path="/volunteers/:id">
+					<Route exact path="/volunteers/:id">
 						<Volunteer />
 					</Route>
 					<Route exact path="/testimonials">
 						<Testimonials />
 					</Route>
 				</Switch>
-			</Router>
-			<Footer />
-		</div>
+				<Footer />
+			</div>
+		</Router>
 	);
 }
 

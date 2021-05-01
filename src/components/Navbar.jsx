@@ -9,7 +9,7 @@ const Navbar = () => {
 	const navigation = [
 		{ name: "Volunteers", href: "/volunteers" },
 		{ name: "FAQ", href: "/faq" },
-		{ name: "About Us", href: "#" },
+		{ name: "About Us", href: "https://www.theknowledgehouse.org/about/" },
 	];
 
 	return (
@@ -37,11 +37,25 @@ const Navbar = () => {
 									</div>
 								</div>
 								<div className="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
-									{navigation.map((item) => (
-										<Link key={item.name} to={item.href} className="font-medium text-gray-500 hover:text-gray-900">
-											{item.name}
-										</Link>
-									))}
+									{navigation.map((item) => {
+										if (item.name === "About Us") {
+											return (
+												<a
+													className="font-medium text-gray-500 hover:text-gray-900"
+													href="https://www.theknowledgehouse.org/about/"
+													target="_blank"
+												>
+													{item.name}
+												</a>
+											);
+										} else {
+											return (
+												<Link key={item.name} to={item.href} className="font-medium text-gray-500 hover:text-gray-900">
+													{item.name}
+												</Link>
+											);
+										}
+									})}
 									<Link to="/testimonials" className="font-medium text-tkhpurple hover:text-indigo-500">
 										Testimonials
 									</Link>
