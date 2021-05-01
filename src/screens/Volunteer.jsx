@@ -20,7 +20,7 @@ const Volunteer = () => {
     useEffect(() => setVolunteer(findOneWithId(id)), [id])
 
     if (!volunteer) {
-        return (<div></div>);
+        return (<></>);
     }
 
 	return (
@@ -65,6 +65,22 @@ const Volunteer = () => {
 					</div>
 				</div>
 			</div>
+
+
+            <div class="content-center">
+                <div>About Me</div>
+                <div>{volunteer.about}</div>
+            </div>
+
+            <div class="content-center">
+                <div>Skillset</div>
+                <div><ul className="flex">
+                    {volunteer.proficiencies.map((item) => (
+                        <li className="mx-3">{item}</li>
+                    ))}
+                </ul></div>
+            </div>
+
 		</div>
 
 

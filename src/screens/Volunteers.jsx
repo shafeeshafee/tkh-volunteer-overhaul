@@ -6,6 +6,36 @@ import VolunteerCard from "../components/utilities/VolunteerCard";
 const Volunteers = () => {
 	const [volunteers, setVolunteers] = useState([]);
 
+	function updateAvailableVolunteers() {
+		const volunteerSearchCriteria = document.getElementById("volunterSearchCriteria");
+		const searchTerms = volunteerSearchCriteria.value.split();
+		console.log("Current search criteria: " + searchTerms);
+
+		let volunteersListElement = document.getElementById("relevantVoluteersLst");
+		let volunteersList = volunteersListElement.childNodes;
+
+		for(let volunteerInfo of volunteersList) {
+			const volunteerInfoBank = volunteerInfo.innerText.toLowerCase();
+			console.log("volunteersInfoBank: " + volunteerInfoBank);
+
+			let currentVolunteerIsRelevant = false;
+			for(const searchTerm of searchTerms) {
+				if(volunteerInfoBank.includes(searchTerm.toLowerCase())) {
+					currentVolunteerIsRelevant = true;
+				}
+			}
+
+			if(currentVolunteerIsRelevant) {
+				console.log("Making this volunteer visible as they are relevant");
+				volunteerInfo.style.display = "block";
+			}
+			else {
+				console.log("Hiding this volunteer as they are not relevant");
+				volunteerInfo.style.display = "none";
+			}
+		}
+	}
+
 	return (
 		<div className="h-screen">
 			<Navbar />
@@ -34,10 +64,14 @@ const Volunteers = () => {
 			</div>
 			<br />
 			{/* Search component goes below */}
-			<input type="search" placeholder="Search e.g., JavaScript" />
+			<input id="volunterSearchCriteria" onChange={updateAvailableVolunteers} type="search" placeholder="Search e.g., JavaScript" />
 
 			{/* List of volunteers below */}
-			<VolunteerCard role="Data Scientist" name="Jason McData" employer="Abc-Xyz Inc." languages={["Python", "JavaScript", "Lua"]} />
+			<ul id="relevantVoluteersLst">
+				<VolunteerCard role="Data Scientist" name="Jason McData" employer="Abc-Xyz Inc." languages={["Python"]} />
+				<VolunteerCard role="Data Scientist" name="Gregory Wint" employer="Abc-Xyz Inc." languages={["JavaScript"]} />
+				<VolunteerCard role="Data Scientist" name="Stringer Bell" employer="Abc-Xyz Inc." languages={["Lua"]} />
+			</ul>
 		</div>
 	);
 };
