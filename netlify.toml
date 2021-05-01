@@ -5,5 +5,7 @@
 
 [build]
   command = "npm run build"
+  publish="volunteer-overhaul/build"
+  base = "volunteer-overhaul"
 
 NODE_ENV = "development"
