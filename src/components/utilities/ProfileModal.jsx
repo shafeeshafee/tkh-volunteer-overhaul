@@ -27,7 +27,7 @@ const ProfileModal = ({isOpen, setIsOpen, volunteer}) => {
                                 <div className="flex z-20">
                                     <div className="flex-1 relative bg-yellow-300">
                                         <button className="absolute left-0 bg-gray-900 text-white" onClick={() => setIsOpen(false)}>
-                                            <XIcon className="w-4 h-4"/>
+                                            <XIcon className="w-6 h-6"/>
                                         </button>
                                         <h1 className="text-2xl font-semibold text-gray-800">{volunteer.name}</h1>
                                         <h1>{volunteer.company}</h1>
@@ -45,12 +45,12 @@ const ProfileModal = ({isOpen, setIsOpen, volunteer}) => {
                                         </div>
                                     </div>
                                     <div className="flex-1">
-                                        <div className="bg-gray-200">
+                                        <div className="bg-gray-200 p-2">
                                             <p className="mx-2 text-justify">
                                                 {volunteer.about}
                                             </p>
                                         </div>
-                                        <div className="flex flex-col bg-white">
+                                        <div className="flex flex-col bg-white p-2">
                                             <div className="flex flex-wrap">
                                                 {volunteer.proficiencies.map((item) => (
                                                     <div className="m-3 bg-gray-400 flex-1" key={item}>

@@ -7,14 +7,14 @@ import volunteersData from "../../volunteers";
 const VolunteerCard = ({ role, name, employer, languages, volunteer }) => {
     const [isOpen, setIsOpen] = useState(false);
 	return (
-		<div>
+		<div className="m-4">
 			<div class="max-w-sm relative bg-white shadow-lg rounded-lg overflow-hidden my-4">
 				<img
 					class="w-full h-56 object-cover object-center"
 					src={volunteer?.image_link.default ?? "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"}
                     alt="avatar"
 				/>
-                <button className="absolute top-0 right-0 text-white focus:outline-none" onClick={() => setIsOpen(true)}>
+                <button className="absolute top-1 right-1 text-white focus:outline-none" onClick={() => setIsOpen(true)}>
                     <ZoomInIcon className="w-8 h-8"/>
                 </button>
 				<div class="flex items-center px-6 py-3 bg-gray-900">
