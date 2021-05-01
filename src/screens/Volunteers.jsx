@@ -15,13 +15,13 @@ const Volunteers = () => {
 		let volunteersListElement = document.getElementById("relevantVoluteersLst");
 		let volunteersList = volunteersListElement.childNodes;
 
-		for(let volunteerInfo of volunteersList) {
+		for (let volunteerInfo of volunteersList) {
 			const volunteerInfoBank = volunteerInfo.innerText.toLowerCase();
 			console.log("volunteersInfoBank: " + volunteerInfoBank);
 
 			let currentVolunteerIsRelevant = false;
-			for(const searchTerm of searchTerms) {
-				if(volunteerInfoBank.includes(searchTerm.toLowerCase())) {
+			for (const searchTerm of searchTerms) {
+				if (volunteerInfoBank.includes(searchTerm.toLowerCase())) {
 					currentVolunteerIsRelevant = true;
 				}
 			}
@@ -31,8 +31,7 @@ const Volunteers = () => {
 			if(currentVolunteerIsRelevant && volunteerInfoBank.includes(selectedSkill)) {
 				console.log("Making this volunteer visible as they are relevant");
 				volunteerInfo.style.display = "block";
-			}
-			else {
+			} else {
 				console.log("Hiding this volunteer as they are not relevant");
 				volunteerInfo.style.display = "none";
 			}
