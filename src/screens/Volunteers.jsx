@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import Navbar from "../components/Navbar";
 import VolunteerCard from "../components/utilities/VolunteerCard";
+import volunteersData from "../volunteers.js";
 
 const Volunteers = () => {
 	const [volunteers, setVolunteers] = useState([]);
@@ -68,6 +69,7 @@ const Volunteers = () => {
 
 			{/* List of volunteers below */}
 			<ul id="relevantVoluteersLst">
+                <VolunteerCard volunteer={volunteersData.technical[0]}/>
 				<VolunteerCard role="Data Scientist" name="Jason McData" employer="Abc-Xyz Inc." languages={["Python"]} />
 				<VolunteerCard role="Data Scientist" name="Gregory Wint" employer="Abc-Xyz Inc." languages={["JavaScript"]} />
 				<VolunteerCard role="Data Scientist" name="Stringer Bell" employer="Abc-Xyz Inc." languages={["Lua"]} />
