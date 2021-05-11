@@ -6,8 +6,8 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import VolunteerCard from "../components/utilities/VolunteerCard";
 import volunteersData from "../volunteers.js";
 
-import Flip from "react-reveal/Flip";
 import Fade from "react-reveal/Fade";
+import Slide from "react-reveal/Slide";
 
 const Volunteers = () => {
 	const [selectedTabIndex, setSelectedTabIndex] = useState(0);
@@ -70,10 +70,12 @@ const Volunteers = () => {
 	return (
 		<div>
 			<Navbar />
-
-			<h1 className="text-5xl font-headings pt-24 font-bold text-tkhpurple">Our Volunteers</h1>
-			{/* dropdown */}
 			<Fade>
+				<Slide top>
+					<h1 className="pt-24 font-headings font-bold text-6xl md:text-7xl mb-5 text-tkhpurple">Our Volunteers</h1>
+				</Slide>
+				{/* dropdown */}
+
 				<div className="relative inline-flex pt-10">
 					<div className="flex justify-center items-center flex-wrap">
 						<Tabs selectedIndex={selectedTabIndex} onSelect={handleSelect}>
@@ -89,15 +91,25 @@ const Volunteers = () => {
 							className="border font-headings text-lg border-gray-300 rounded-full text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none"
 						>
 							<option value="" selected="selected" disabled hidden>
-								Select skills of interest
+								⁜ Select technical skill of interest
 							</option>
 							<option value="JavaScript">JavaScript</option>
+							<option value="CSS">HTML & CSS</option>
+							<option value="React">React</option>
+							<option value="Native">Native</option>
+							<option value="TypeScript">TypeScript</option>
 							<option value="c++">C++</option>
+							<option value="c#">C#</option>
+							<option value="Go">Go</option>
+							<option value="Java">Java</option>
+							<option value="Java">Java</option>
+							<option value="PHP">PHP</option>
 							<option value="python">Python</option>
-							<option value="sql">SQL</option>
-							<option value="lua">Lua</option>
-							<option value="technical interviews">Technical Interview Prep</option>
-							<option value="behaviorial interviews">Behavioral Interview Prep</option>
+							<option value="ruby">Ruby</option>
+							<option value="postgresql">PostgreSQL</option>
+							<option value="machine">Machine Learning</option>
+							<option value="UX">UX UI</option>
+							<option value="data">Data Science</option>
 						</select>
 
 						<br />

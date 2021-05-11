@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 
 import Fade from "react-reveal/Fade";
 import Pulse from "react-reveal/Pulse";
+import Slide from "react-reveal/Slide";
 
 const Faq = () => {
 	return (
@@ -10,12 +11,14 @@ const Faq = () => {
 			<Navbar />
 			<Fade>
 				<div className="max-w-screen-xl mx-auto p-8 mb-10">
-					<h2 className="text-3xl font-extrabold leading-9 border-b-2 border-gray-100 text-gray-900 mb-12">FAQs</h2>
+					<Slide top>
+						<h2 className="text-6xl md:text-7xl font-bold mb-5 text-tkhpurple font-headings pb-10">FAQs</h2>
+					</Slide>
 
-					<ul className="flex justify-center items-center gap-10 text-justify flex-wrap h-full">
+					<ul className="flex justify-center items-center gap-10 text-justify flex-wrap h-full font-bodyFont">
 						<Pulse>
 							<li className="w-full xl:w-1/3 mx-3 xl:mx-10">
-								<p className="text-lg font-medium leading-6 text-gray-900">Who can volunteer for TKH?</p>
+								<p className="text-lg font-semibold mb-2 leading-6 text-tkhpurple font-headings">Who can volunteer for TKH?</p>
 								<p className="mt-2">
 									<p className="text-base leading-6 text-gray-500">
 										TKH Volunteer team members all have diverse backgrounds from various industries. We have volunteer members who hold tech
@@ -27,7 +30,7 @@ const Faq = () => {
 						</Pulse>
 						<Pulse>
 							<li className="w-full xl:w-1/3 mx-3 xl:mx-10">
-								<p className="text-lg font-medium leading-6 text-gray-900">How do I request volunteer help?</p>
+								<p className="text-lg font-semibold mb-2 leading-6 text-tkhpurple font-headings">How do I request volunteer help?</p>
 								<p className="mt-2">
 									<p className="text-base leading-6 text-gray-500">
 										Start by checking out the profile for our volunteer members. There you can get to know them a little better, view their
@@ -39,7 +42,9 @@ const Faq = () => {
 						</Pulse>
 						<Pulse>
 							<li className="w-full xl:w-1/3 mx-3 xl:mx-10">
-								<p className="text-lg font-medium leading-6 text-gray-900">How do I do about rescheduling with a volunteer?</p>
+								<p className="text-lg font-semibold mb-2 leading-6 text-tkhpurple font-headings">
+									How do I do about rescheduling with a volunteer?
+								</p>
 								<p className="mt-2">
 									<p className="text-base leading-6 text-gray-500">
 										It is bound to happen that an unexpected emergency arises. If that does happen, we urge to contact the volunteer you've
@@ -50,7 +55,7 @@ const Faq = () => {
 						</Pulse>
 						<Pulse>
 							<li className="w-full xl:w-1/3 mx-3 xl:mx-10">
-								<p className="text-lg font-medium leading-6 text-gray-900">Does my location matter?</p>
+								<p className="text-lg font-semibold mb-2 leading-6 text-tkhpurple font-headings">Does my location matter?</p>
 								<p className="mt-2">
 									<p className="text-base leading-6 text-gray-500">
 										For some volunteer engagements, physical presence is needed. For other engagements, a digital presence can be
@@ -62,7 +67,7 @@ const Faq = () => {
 						</Pulse>
 						<Pulse>
 							<li className="w-full xl:w-1/3 mx-3 xl:mx-10">
-								<p className="text-lg font-medium leading-6 text-gray-900">
+								<p className="text-lg font-semibold mb-2 leading-6 text-tkhpurple font-headings">
 									Who do I contact if I have questions regarding the Volunteer Program
 								</p>
 								<p className="mt-2">
@@ -75,7 +80,7 @@ const Faq = () => {
 						</Pulse>
 						<Pulse>
 							<li className="w-full xl:w-1/3 mx-3 xl:mx-10">
-								<p className="text-lg font-medium leading-6 text-gray-900">How do I become a volunteer or mentor?</p>
+								<p className="text-lg font-semibold mb-2 leading-6 text-tkhpurple font-headings">How do I become a volunteer or mentor?</p>
 								<p className="mt-2">
 									<p className="text-base leading-6 text-gray-500">
 										Sign up to be a{" "}

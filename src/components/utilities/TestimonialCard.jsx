@@ -7,13 +7,13 @@ const TestimonialCard = ({ name, course, quote, avatar }) => {
 						<img src={avatar} alt="" />
 					</div>
 					<div className="flex-grow pl-3">
-						<h6 className="font-bold text-xl uppercase text-tkhpurple">{name}</h6>
-						<h6 className="font-bold text-sm uppercase text-gray-400">{course}</h6>
+						<h6 className="font-bold text-xl uppercase text-tkhpurple font-headings">{name}</h6>
+						<h6 className="font-bold text-sm uppercase text-gray-400 font-headings">{course}</h6>
 					</div>
 				</div>
 				<div className="w-full">
 					<p className="text-sm lg:text-lg leading-tight">
-						<span className="text-lg leading-none italic font-bold text-gray-400 mr-1">"</span>
+						<span className="text-lg leading-none italic font-bold text-gray-400 mr-1 font-bodyFont">"</span>
 						{quote}
 						<span className="text-lg leading-none italic font-bold text-gray-400 ml-1">"</span>
 					</p>

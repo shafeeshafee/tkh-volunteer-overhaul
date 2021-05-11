@@ -2,3 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Hind:wght@300;400&family=Montserrat:ital,wght@0,300;0,400;0,600;1,300&display=swap");
+
+.truncated {
+	height: 300px;
+	width: 100%;
+	/**Major Properties**/
+	line-height: 2rem;
+	-webkit-box-orient: horizontal;
+	display: block;
+	display: -webkit-box;
+	overflow: auto !important;
+	text-overflow: ellipsis;
+	-webkit-line-clamp: 4;
+}
+
+.shadowed {
+	box-shadow: 24px 24px 0px #372359, -24px -24px 0px #ffffff;
+}
+
+.tooltip {
+	visibility: hidden;
+	position: absolute;
+	bottom: -50px;
+}
+.has-tooltip:hover .tooltip {
+	visibility: visible;
+	z-index: 100;
+	background: white;
+	border: 5px solid #372359;
+	padding: 0.5rem;
+}
+
+.origin-top-right {
+	z-index: 50;
+}
+
+.filtered {
+	filter: drop-shadow(15px 15px 20px gray);
+}

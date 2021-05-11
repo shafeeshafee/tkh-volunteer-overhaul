@@ -49,7 +49,7 @@ const Heading = () => {
 														to="/volunteers"
 														className="font-headings w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-tkhpurple hover:bg-tkhyellow hover:text-tkhpurple md:py-4 md:text-lg md:px-10 transition ease-in-out"
 													>
-														Get started
+														View Volunteers
 													</Link>
 												</Jump>
 											</div>
