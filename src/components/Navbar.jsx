@@ -5,28 +5,28 @@ import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 
+import tkhLogo from "../images/tkh_logo.png";
+
 const Navbar = () => {
 	const navigation = [
 		{ name: "Volunteers", href: "/volunteers" },
 		{ name: "FAQ", href: "/faq" },
-		{ name: "About Us", href: "https://www.theknowledgehouse.org/about/" },
+		{ name: "Mission", href: "https://www.theknowledgehouse.org/about/" },
+		{ name: "Testimonials", href: "/testimonials" },
 	];
 
 	return (
 		<div>
-			<Popover>
+			<Popover className="z-50">
 				{({ open }) => (
 					<>
-						<div className="relative pt-6 px-4 sm:px-6 lg:px-8">
-							<nav className="relative flex items-center justify-between sm:h-10 lg:justify-start" aria-label="Global">
+						<div className="relative pt-6 px-4 sm:px-6 lg:px-8 z-50">
+							<nav className="relative flex items-center justify-between sm:h-10 lg:justify-start z-50" aria-label="Global">
 								<div className="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
 									<div className="flex items-center justify-between w-full md:w-auto">
 										<Link to="/">
 											<span className="sr-only">Workflow</span>
-											<img
-												className="h-8 w-auto sm:h-10"
-												src="https://cdn.discordapp.com/attachments/746132592776052758/837369189739921488/Purple_House.png"
-											/>
+											<img className="h-8 w-auto sm:h-10" src={tkhLogo} />
 										</Link>
 										<div className="-mr-2 flex items-center md:hidden">
 											<Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
@@ -38,12 +38,20 @@ const Navbar = () => {
 								</div>
 								<div className="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
 									{navigation.map((item) => {
-										if (item.name === "About Us") {
+										if (item.name === "Volunteers") {
+											return (
+												<Link to="/volunteers" className="font-medium text-tkhpurple hover:text-tkhyellow">
+													Volunteers
+												</Link>
+											);
+										}
+										if (item.name === "Mission") {
 											return (
 												<a
 													className="font-medium text-gray-500 hover:text-gray-900"
-													href="https://www.theknowledgehouse.org/about/"
 													target="_blank"
+													rel="noreferrer"
+													href="https://www.theknowledgehouse.org/about/"
 												>
 													{item.name}
 												</a>
@@ -56,9 +64,6 @@ const Navbar = () => {
 											);
 										}
 									})}
-									<Link to="/testimonials" className="font-medium text-tkhpurple hover:text-tkhyellow">
-										Testimonials
-									</Link>
 								</div>
 							</nav>
 						</div>
@@ -97,9 +102,6 @@ const Navbar = () => {
 											</a>
 										))}
 									</div>
-									<a href="#" className="block w-full px-5 py-3 text-center font-medium text-tkhpurple bg-gray-50 hover:bg-gray-100">
-										Testimonials
-									</a>
 								</div>
 							</Popover.Panel>
 						</Transition>

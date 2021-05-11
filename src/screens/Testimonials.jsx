@@ -16,7 +16,7 @@ const Testimonials = () => {
 						<div className="w-full max-w-6xl mx-auto">
 							<div className="text-center max-w-xl mx-auto">
 								<Slide top>
-									<h1 className="text-6xl md:text-7xl font-bold mb-5 text-tkhpurple">
+									<h1 className="text-6xl md:text-7xl font-bold mb-5 text-tkhpurple font-headings">
 										What students <br />
 										are saying.
 									</h1>{" "}

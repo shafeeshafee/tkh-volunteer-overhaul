@@ -18,7 +18,10 @@ const Footer = () => {
 							to see how you can get started.
 						</p>
 						<div className="w-44 pt-6 md:pt-0">
-							<a className="bg-tkhyellow text-tkhpurple justify-center text-center rounded-lg shadow px-10 py-3 flex items-center">
+							<a
+								href="mailto:derrickstroman@theknowledgehouse.org"
+								className="bg-tkhyellow text-tkhpurple justify-center text-center rounded-lg shadow px-10 py-3 flex items-center cursor-pointer"
+							>
 								Contact
 							</a>
 						</div>
